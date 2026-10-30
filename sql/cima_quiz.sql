@@ -5,11 +5,13 @@ CREATE DATABASE IF NOT EXISTS cima_quiz
 USE cima_quiz;
 
 
+
 CREATE TABLE IF NOT EXISTS participantes (
     id_participante INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     equipo VARCHAR(50)
 );
+
 
 
 CREATE TABLE IF NOT EXISTS preguntas (
@@ -22,6 +24,7 @@ CREATE TABLE IF NOT EXISTS preguntas (
     opcion_d VARCHAR(255) NOT NULL,
     respuesta_correcta ENUM('A', 'B', 'C', 'D') NOT NULL
 );
+
 
 
 CREATE TABLE IF NOT EXISTS intentos (
@@ -44,7 +47,9 @@ CREATE TABLE IF NOT EXISTS intentos (
 );
 
 
+
 TRUNCATE TABLE preguntas;
+
 
 
 INSERT INTO preguntas (tema, enunciado, opcion_a, opcion_b, opcion_c, opcion_d, respuesta_correcta) VALUES
@@ -60,6 +65,7 @@ INSERT INTO preguntas (tema, enunciado, opcion_a, opcion_b, opcion_c, opcion_d, 
 ('HTML', '¿Cuál es la forma correcta de crear un botón de opción (radio)?', '<input type="radio">', '<input type="check">', '<radio>', '<select type="radio">', 'A');
 
 
+
 INSERT INTO preguntas (tema, enunciado, opcion_a, opcion_b, opcion_c, opcion_d, respuesta_correcta) VALUES
 ('MYSQL', '¿Qué comando se usa para consultar datos de una tabla?', 'INSERT', 'DELETE', 'SELECT', 'UPDATE', 'C'),
 ('MYSQL', '¿Qué comando agrega un nuevo registro a una tabla?', 'INSERT INTO', 'SELECT', 'DROP', 'ORDER BY', 'A'),
@@ -73,17 +79,19 @@ INSERT INTO preguntas (tema, enunciado, opcion_a, opcion_b, opcion_c, opcion_d, 
 ('MYSQL', '¿Qué función cuenta cuántos registros hay?', 'SUM', 'COUNT', 'MAX', 'AVG', 'B');
 
 
+
 INSERT INTO preguntas (tema, enunciado, opcion_a, opcion_b, opcion_c, opcion_d, respuesta_correcta) VALUES
 ('PYTHON', '¿Qué función se usa para mostrar datos en pantalla en Python?', 'echo', 'print()', 'console.log()', 'printf', 'B'),
 ('PYTHON', '¿Cuál es la extensión correcta de un archivo de Python?', '.py', '.pyt', '.pyth', '.pt', 'A'),
 ('PYTHON', '¿Qué palabra se usa para crear una condición en Python?', 'if', 'when', 'condition', 'check', 'A'),
 ('PYTHON', 'En Python, ¿cómo se declara una lista?', 'lista = {}', 'lista = []', 'lista = ()', 'lista = < >', 'B'),
 ('PYTHON', '¿Qué hace el operador % en Python?', 'Calcula porcentaje', 'Divide dos números', 'Devuelve el residuo de una división', 'Multiplica', 'C'),
-('PYTHON', 'Python es un lenguaje compilado y no interpretado.', 'Verdadero', 'Falso', '', '', 'B'),
+('PYTHON', '¿Python es un lenguaje compilado o interpretado?', 'Solo compilado', 'Interpretado', 'Solo de marcado', 'Solo de bases de datos', 'B'),
 ('PYTHON', '¿Qué ciclo se usa para repetir código un número determinado de veces?', 'for', 'repeat', 'loop', 'while only', 'A'),
 ('PYTHON', '¿Qué valor devuelve la expresión 3 > 5?', 'True', 'False', '0', 'Error', 'B'),
 ('PYTHON', '¿Cómo se pide un dato al usuario por teclado?', 'input()', 'get()', 'read()', 'scan()', 'A'),
 ('PYTHON', 'Completa el código para sumar números impares: if num % 2 ___ 0:', '==', '!=', '>', '<', 'B');
+
 
 
 SELECT tema, COUNT(*) AS total FROM preguntas GROUP BY tema;
