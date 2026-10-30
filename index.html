@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CIMA Quiz - Maqueta General</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>CIMA Quiz System</h1>
+        <p>Sistema evaluador de conocimientos (HTML, MySQL y Python)</p>
+    </header>
+    <nav>
+        <b>Ir a:</b>
+        <a href="#registro">Registro</a> |
+        <a href="#cuestionario">Cuestionario</a> |
+        <a href="#ranking">Ranking</a>
+    </nav>
+    <hr>
+
+    <!-- 1: REGISTRO -->
+    <section id="registro" class="seccion">
+        <h2>1. Registro de Participante</h2>
+        <p>Ingresa tus datos para comenzar:</p>
+        <form>
+            <label>Nombre completo:</label><br>
+            <input type="text" placeholder="Escribe tu nombre"><br><br>
+
+            <label>Correo electrónico:</label><br>
+            <input type="email" placeholder="correo@ejemplo.com"><br><br>
+
+            <label>Equipo:</label><br>
+            <input type="text" placeholder="Equipo 2"><br><br>
+
+            <button type="button">Guardar Registro</button>
+        </form>
+    </section>
+    <hr>
+
+    <!-- 2: CUESTIONARIO  -->
+    <section id="cuestionario" class="seccion">
+        <h2>2. Cuestionario Evaluable</h2>
+        <p>Responde las preguntas de los tres bloques:</p>
+
+        <!-- Bloque Python -->
+        <div class="bloque">
+            <h3>Bloque: Python</h3>
+            <p><i>(Aquí irán las preguntas de Python...)</i></p>
+            <input type="radio" name="p1"> A Opción de ejemplo<br>
+            <input type="radio" name="p1"> B Opción de ejemplo<br>
+        </div>
+
+        <!-- Bloque HTML -->
+        <div class="bloque">
+            <h3>Bloque: HTML</h3>
+            <p><i>(Aquí irán las preguntas de HTML...)</i></p>
+            <input type="radio" name="p2"> A Opción de ejemplo<br>
+            <input type="radio" name="p2"> B Opción de ejemplo<br>
+        </div>
+
+        <!-- Bloque MySQL -->
+        <div class="bloque">
+            <h3>Bloque: MySQL</h3>
+            <p><i>(Aquí irán las preguntas de MySQL...)</i></p>
+            <input type="radio" name="p3"> A Opción de ejemplo<br>
+            <input type="radio" name="p3"> B Opción de ejemplo<br>
+        </div>
+        <button type="button">Enviar Cuestionario</button>
+    </section>
+    <hr>
+
+    <!--  3: RANKING -->
+    <section id="ranking" class="seccion">
+        <h2>3. Ranking Top 10</h2>
+        <p>Tabla de resultados:</p>
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Posición</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Puntaje</th>
+            </tr>
+            <tr>
+                <td colspan="4" align="center" style="color: gray;">
+                    Aún no hay registros en el sistema.
+                </td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
